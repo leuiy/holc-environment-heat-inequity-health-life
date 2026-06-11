@@ -1,9 +1,10 @@
+# [English]
 ## HOLC Redlining → Vegetation Deficit → Urban Heat → Health and Livelihood Vulnerability
 A spatial causal analysis examining how HOLC redlining classifications have driven regional vegetation disparities over approximately 100 years, and how the resulting surface temperature inequalities further impact health and livelihood vulnerability. The analysis covers 108 U.S. cities and 13,518 census tracts.
 
 ## Study Overview — Serial Mediation Model
 HOLC Rating → NDVI Variation (M1) → LST Variation (M2) → Health & Livelihood Outcomes
-- Framework: 4-step serial mediation (HOLC Grade → NDVI Deviation → LST Deviation → Health & Life Outcomes)
+- Framework: 4-step serial mediation (HOLC Grade → NDVI Deviation → LST Deviation → Health & Livelihood Vulnerability)
 - Group comparison: Kruskal-Wallis + Mann-Whitney U (Bonferroni correction)
 - Feature engineering: PCA-based social vulnerability index, environmental redlining index (ndvi_holc)
 - Regression: Forward stepwise OLS → quadratic multiple regression (R²=0.426)
@@ -20,12 +21,12 @@ Python: pandas, numpy, scipy, statsmodels, scikit-learn, xgboost, lightgbm, matp
 - LST deviation spikes sharply as ndvi_diff approaches −0.416
 - Quadratic multiple regression with mean-centering (R²=0.426)
 - LST is heavily influenced by physical factors; ML models were built solely to verify the absence of underfitting in the regression model
-- Hard-voting ensemble (R²=0.485) confirms no significant underfitting; Group K-Fold CV by city name applied for cross-validation
+- A hard-voting ensemble (Test R²=0.485) confirmed the absence of underfitting in the regression model. City-level Group K-Fold CV was implemented for robust cross-validation.
 - LST declines beyond the inflection point (high-rise shadowing effect) — the most heat-vulnerable areas are those around the threshold, not the densest cores
 - Regional inflection points vary: the arid West is sensitive to even minor green space loss; the dense-canopy Northeast shows relatively high resilience
 - HOLC → NDVI → LST mediation ratio: 104% (suppression effect) — controlling for vegetation reverses the sign of HOLC's direct path; Bootstrap 95% CI [0.436, 0.496] excludes 0
-- NDVI → LST → Health & Life mediation: full mediation confirmed for sleep deprivation, food insecurity, and housing instability
-- Final 4-step serial mediation (HOLC → NDVI → LST → Health & Life): partial mediation confirmed in 14 of 15 variables — independent socioeconomic pathways (economic isolation, healthcare infrastructure gaps) coexist alongside the environmental route
+- NDVI → LST → Health & Livelihood Vulnerability mediation: full mediation confirmed for sleep deprivation, food insecurity, and housing instability
+- Final 4-step serial mediation (HOLC → NDVI → LST → Health & Livelihood Vulnerability): partial mediation confirmed in 14 of 15 variables — independent socioeconomic pathways (economic isolation, healthcare infrastructure gaps) coexist alongside the environmental route
 
 ## Conclusion
 Historical HOLC grades have driven regional vegetation disparities over 100 years, fully mediating their impact on present-day LST
@@ -38,6 +39,7 @@ Long-term policy effects must be considered, as current interventions may compou
 Primary: Team lead, Primary code author {preprocessing → regression → ML → mediation(Causal, Sobel test, Bootstrap CI)}
 Supporting: EDA, PCA, regional inflection point derivation
 
+# [Korean]
 ## Holc Redlining → 식생 지수 → 지표면 온도 → 보건 및 생활 취약성
 HOLC 레드라이닝 등급으로 인한 약 100년간의 지역별 식생 편차를 매개로 야기된 지표면 온도 불평등과 이를 매개로 다시한번 보건 및 생활 취약성이 받는 영향을 분석한 공간 인과 분석 연구입니다. 미국 108개도시, 13518개의 센서스 트랙을 대상으로 분석하였습니다.
 
