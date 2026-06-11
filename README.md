@@ -1,6 +1,6 @@
-# HOLC Redlining → Vegetation Deficit → Urban Heat → Health&Life Disparity
+## HOLC Redlining → Vegetation Deficit → Urban Heat → Health&Life Disparity
 A spatial causal analysis examining how historical HOLC redlining grades propagate through vegetation deficit and urban heat exposure to produce present-day health&life inequities across 108 U.S. cities. (13,000+ census tracts)
-# Research Overview - Serial Mediation Framework
+## Research Overview - Serial Mediation Framework
 HOLC Grade → NDVI Deficit (M1) → LST Deviation (M2) → Health&Life Outcomes
 
 
